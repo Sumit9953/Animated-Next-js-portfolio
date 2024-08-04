@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { delay, motion, useInView, useScroll } from "framer-motion";
+import { motion, useInView, useScroll } from "framer-motion";
 import Brain from "@/components/brain";
 
 const About = () => {
@@ -24,25 +24,27 @@ const About = () => {
       transition={{ duration: 1 }}
     >
       {/* Container */}
-      <div className="h-full overflow-scroll lg:flex" ref={containerRef}>
+      <div
+        className="h-full  overflow-scroll dark:bg-slate-800 text-black dark:text-white lg:flex"
+        ref={containerRef}
+      >
         {/* Text contaniner */}
         <div
-          className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex  flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pr-0 xl:w-1/2
+          className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-10  flex  flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-20 lg:w-2/3 lg:pr-0 xl:w-1/2
         "
         >
           {/* Biograpgy */}
           <div className="flex flex-col gap-12 justify-center">
             <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
             <p className="text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
-              quaerat illum minus quia recusandae voluptates eligendi asperiores
-              quis magnam. Iusto ad voluptates at error facere fuga enim
-              explicabo ullam totam?
+              Adaptable Zoho Developer with extensive experience providing first
+              class result. Meets job demands and deadlines through diligent
+              work-ethic and dedication to quality
             </p>
-            <span className=" italic">
+            {/* <span className=" italic">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Voluptatibus, quam?
-            </span>
+            </span> */}
 
             <motion.svg
               initial={{ opacity: 0.2, y: 0 }}
@@ -53,6 +55,7 @@ const About = () => {
               xmlns="http://www.w3.org/2000/svg"
               width={50}
               height={50}
+              className="dark:fill-white"
             >
               <path
                 d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z"
@@ -81,49 +84,59 @@ const About = () => {
             <motion.div
               initial={{ x: "-1000px" }}
               animate={isSkillRefInView ? { x: 0 } : {}}
+              transition={{ delay: 0.2, ease: "easeIn" }}
               className="flex gap-4 flex-wrap"
             >
               <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black ">
-                Javascript
+                Deluge
               </div>
               <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black ">
-                Javascript
+                Api Integration
               </div>
               <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black ">
-                Javascript
+                Webhooks
               </div>
               <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black ">
-                Javascript
+                CRM
               </div>
               <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black ">
-                Javascript
+                Creator
               </div>
               <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black ">
-                Javascript
+                Accounts
               </div>
               <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black ">
-                Javascript
+                Analytics
               </div>
               <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black ">
-                Javascript
+                Desk
               </div>
               <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black ">
-                Javascript
+                Flow
               </div>
               <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black ">
-                Javascript
+                Data Migration
               </div>
               <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black ">
-                Javascript
+                SalesIQ
               </div>
               <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black ">
-                Javascript
+                Marketing
               </div>
               <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black ">
-                Javascript
+                Backstage
               </div>
               <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black ">
-                Javascript
+                Sign
+              </div>
+              <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black ">
+                Writter
+              </div>
+              <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black ">
+                Zapier
+              </div>
+              <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black ">
+                Other Zoho Application
               </div>
             </motion.div>
 
@@ -134,8 +147,9 @@ const About = () => {
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              width={50}
-              height={50}
+              width={40}
+              height={40}
+              className="dark:fill-white"
             >
               <path
                 d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z"
@@ -152,7 +166,7 @@ const About = () => {
           </div>
           {/* expeience */}
           <div
-            className="flex flex-col gap-12 justify-center pb-48"
+            className="flex flex-col  gap-12 justify-center  pb-48"
             ref={experienceRef}
           >
             <motion.h1
@@ -168,23 +182,29 @@ const About = () => {
             <motion.div
               initial={{ x: "10000px" }}
               animate={isExperienceRefInView ? { x: 0 } : {}}
-              className=""
+              transition={{ duration: 0.5, ease: "easeInOut" }}
             >
               <div className="flex justify-between h-48">
                 {/* left */}
                 <div className="w-1/3">
-                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                    Senior java Enginerr
+                  <div className="bg-white dark:text-black p-3 font-semibold rounded-b-lg rounded-s-lg">
+                    Zoho Developer
                   </div>
                   <div className="p-3 text-sm italic">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Enim voluptatem, eos praesentium tenetur vel quaerat.
+                    I've worked at Delveio for 2.5 years, completing about 30
+                    projects with a focus on CRM and case studies. I’m skilled
+                    in accounting, API integration, webhooks, Deluge scripting,
+                    and Zoho Creator applications. I developed a barcoding
+                    system and customer portals, and have strong analytics and
+                    SQL skills, as well as marketing application knowledge. My
+                    experience and continuous learning have prepared me for
+                    complex projects.
                   </div>
                   <div className="p-3 text-red-400 text-sm font-semibold">
-                    2024 - Present
+                    Apr 2022 to Current
                   </div>
                   <div className="p-1 rounded bg-white text-sm font-semibold text-black w-fit">
-                    Apple
+                    Delveio Consulting
                   </div>
                 </div>
 
@@ -204,55 +224,29 @@ const About = () => {
 
                 {/* center */}
                 <div className="w-1/6 ">
-                  <div className="w-1 h-full bg-gray-600 rounded relative">
+                  <div className="w-1 h-full bg-gray-600 dark:bg-gray-50 rounded relative">
                     <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
                   </div>
                 </div>
                 {/* right */}
 
-                <div className="w-1/3">
-                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                    Senior java Enginerr
+                <div className="w-1/3 ">
+                  <div className="bg-white dark:text-black p-3 font-semibold rounded-b-lg rounded-s-lg">
+                    Zoho Developer
                   </div>
                   <div className="p-3 text-sm italic">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Enim voluptatem, eos praesentium tenetur vel quaerat.
+                    With extensive freelancing experience, I have successfully
+                    managed Zoho setups for multiple organizations. My expertise
+                    includes handling complex projects and delivering tailored
+                    solutions to meet diverse business needs. I am dedicated to
+                    providing exceptional service and ensuring optimal results
+                    for every client.
                   </div>
-                  <div className="p-3 text-red-400 text-sm font-semibold">
-                    2024 - Present
-                  </div>
+                  <div className="p-3 text-red-400 text-sm font-semibold"></div>
                   <div className="p-1 rounded bg-white text-sm font-semibold text-black w-fit">
-                    Apple
+                    freelancing
                   </div>
                 </div>
-              </div>
-
-              <div className="flex justify-between h-48">
-                {/* left */}
-                <div className="w-1/3">
-                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                    Senior java Enginerr
-                  </div>
-                  <div className="p-3 text-sm italic">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Enim voluptatem, eos praesentium tenetur vel quaerat.
-                  </div>
-                  <div className="p-3 text-red-400 text-sm font-semibold">
-                    2024 - Present
-                  </div>
-                  <div className="p-1 rounded bg-white text-sm font-semibold text-black w-fit">
-                    Apple
-                  </div>
-                </div>
-
-                {/* center */}
-                <div className="w-1/6 ">
-                  <div className="w-1 h-full bg-gray-600 rounded relative">
-                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
-                  </div>
-                </div>
-                {/* right */}
-                <div className="w-1/3"></div>
               </div>
             </motion.div>
           </div>
