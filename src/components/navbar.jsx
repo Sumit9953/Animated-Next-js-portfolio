@@ -7,10 +7,12 @@ import { useState } from "react";
 import NavLink from "./navLink";
 
 import { motion } from "framer-motion";
+import ThemeSwitch from "./hooks/useThemeSwitcher";
 
 const links = [
   { url: "/", title: "Home" },
   { url: "/about", title: "About" },
+  { url: "/CaseStudy", title: "Case Study" },
   { url: "/portfolio", title: "Portfolio" },
   { url: "/contact", title: "Contact" },
 ];
@@ -52,52 +54,57 @@ const Navbar = () => {
     },
     opened: {
       x: 0,
-      transition : {
+      transition: {
         when: "beforeChildren",
         staggerChildren: 0.2,
-      }
+      },
     },
   };
 
   const listItemVariants = {
     closed: {
-        x:-10,
-        opacity: 0,
-      },
-      opened: {
-        x: 0,
-        opacity: 1,
-      },
-  }
+      x: -10,
+      opacity: 0,
+    },
+    opened: {
+      x: 0,
+      opacity: 1,
+    },
+  };
 
   return (
-    <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl">
-      <div className="hidden md:flex gap-4 w-1/3">
+    <div className="h-full dark:bg-slate-800 flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl">
+      <div className="hidden md:flex gap-4 w-[50%]">
         {links.map((link) => (
           <NavLink key={link.title} link={link} />
         ))}
       </div>
       {/* logo */}
-      <div className="md:hidden lg:flex xl:justify-center xl:w-1/3">
+      {/* <div className="md:hidden lg:flex xl:justify-center xl:w-1/3">
         <Link
           href="/"
-          className="text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center"
+          className="text-sm bg-black dark:bg-white rounded-md p-1 font-semibold flex items-center justify-center"
         >
-          <span className="text-white px-1 mr-1">Sum</span>
-          <span className="w-12 h-8 bg-white text-black flex items-center justify-center">
-            iT
+          <span className="text-white dark:text-black px-1 mr-1">San</span>
+          <span className="w-12 h-8 bg-white dark:bg-black text-black dark:text-white flex items-center justify-center">
+            tosh
           </span>
         </Link>
-      </div>
+      </div> */}
 
       <div className="hidden md:flex gap-4 w-1/3 justify-end ">
-        <Link href="">
-          <Image src="/github.png" alt="" width={24} height={24} />
-        </Link>
-        <Link href="">
+        {/* <Link href="">
+          <Image
+            src="/github.png"
+            alt=""
+            width={24}
+            height={24}
+          />
+        </Link> */}
+        <Link href="https://www.linkedin.com/in/santosh-kumar-7ba97a188/">
           <Image src="/linkedin.png" alt="" width={24} height={24} />
         </Link>
-        <Link href="">
+        {/* <Link href="">
           <Image src="/facebook.png" alt="" width={24} height={24} />
         </Link>
         <Link href="">
@@ -108,7 +115,9 @@ const Navbar = () => {
         </Link>
         <Link href="">
           <Image src="/instagram.png" alt="" width={24} height={24} />
-        </Link>
+        </Link> */}
+
+        <ThemeSwitch />
       </div>
 
       {/* Responisive menu */}
@@ -144,12 +153,12 @@ const Navbar = () => {
           className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl z-40"
         >
           {links.map((link) => (
-            <motion.div variants={listItemVariants}
-            
-             className="" key={link.title}>
-                <Link href={link.url} >
-                {link.title}
-                </Link>
+            <motion.div
+              variants={listItemVariants}
+              className=""
+              key={link.title}
+            >
+              <Link href={link.url}>{link.title}</Link>
             </motion.div>
           ))}
         </motion.div>
